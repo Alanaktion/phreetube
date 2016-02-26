@@ -1,0 +1,12 @@
+{
+    "name": "alanaktion/phreetube",
+    "require": {
+        "bcosca/fatfree": "^3.5"
+    },
+    "authors": [
+        {
+            "name": "Alan Hardman",
+            "email": "alanaktion@gmail.com"
+        }
+    ]
+}
