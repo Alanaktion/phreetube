@@ -10,6 +10,6 @@ class Index extends \Controller
      */
     function index(\Base $fw, array $params)
     {
-        $this->_render('index.html');
+        $this->render('index.html');
     }
 }

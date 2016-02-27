@@ -18,7 +18,11 @@ final class App
         }
 
         // Initialize Composer autoloader
-        require_once 'vendor/autoload.php';
+        if(is_file('vendor/autoload.php')) {
+            require_once 'vendor/autoload.php';
+        } else {
+            throw new Exception('Composer autoloader not found. Run `composer install` to fix.');
+        }
 
         // Initialize framework
         self::$_router = Base::instance();
@@ -39,18 +43,6 @@ final class App
 
         // Initialize routes
         require_once 'routes.php';
-    }
-
-    /**
-     * Automatically load classes when required
-     * @param string $class
-     */
-    static function autoload($class)
-    {
-        $filename = strtolower(str_replace('\\', '/', $class)) . '.php';
-        if (is_file(__DIR__ . DIRECTORY_SEPARATOR . $filename)) {
-            require_once __DIR__ . DIRECTORY_SEPARATOR . $filename;
-        }
     }
 
     /**
