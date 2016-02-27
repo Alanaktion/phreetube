@@ -1,5 +1,4 @@
 <?php
-
 $router = App::router();
 
 // Index

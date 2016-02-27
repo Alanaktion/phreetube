@@ -1,7 +1,6 @@
 <?php
-
 return [
-	"sitename" => "PhreeTube",
+    "sitename" => "PhreeTube",
     "db" => [
         "host" => "localhost",
         "username" => "root",
