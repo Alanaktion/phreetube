@@ -1,7 +1,7 @@
 <?php
 namespace Helper;
 
-class Dashboard extends \Prefab
+class Video extends \Prefab
 {
 
     /**
