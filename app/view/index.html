@@ -4,9 +4,9 @@
     <include href="blocks/head.html" />
 </head>
 <body>
+    <include href="blocks/nav.html" />
     <div class="container">
-        <h1>{{ @sitename }}</h1>
-       <p>{{ \Helper\Video::instance()->uniqueKey() }}</p>
+        <p>{{ \Helper\Video::instance()->uniqueKey() }}</p>
     </div>
 </body>
 </html>
