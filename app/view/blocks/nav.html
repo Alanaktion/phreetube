@@ -15,7 +15,7 @@
 
         <form class="form-inline pull-xs-right" action="{{ @BASE }}/search" method="get">
             <div class="input-group">
-                <input class="form-control" type="text" name="q" placeholder="Search">
+                <input class="form-control" type="text" name="q" placeholder="Search" value="{{ @@GET.q | esc }}">
                 <span class="input-group-btn">
                     <button class="btn btn-secondary" type="submit">
                         <span class="octicon octicon-search"></span>
