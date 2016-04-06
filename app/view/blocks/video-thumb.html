@@ -1,0 +1,11 @@
+<div class="video-thumb">
+	<a href="{{ @BASE }}/v/{{ @item.slug }}">
+		<img class="img-responsive" src="{{ @BASE }}/src/thm/{{ @item.slug }}.jpg" alt>
+	</a>
+	<a href="{{ @BASE }}/v/{{ @item.slug }}" class="video-thumb-title">
+		<strong>{{ @item.title | esc }}</strong>
+	</a>
+	{{ number_format(@item.views) }} views
+	&middot;
+	{{ @item->ago() }}
+</div>

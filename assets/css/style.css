@@ -1,0 +1,19 @@
+.video-thumb {
+    float: left;
+    width: 160px;
+    margin-right: 15px;
+    font-size: 11px;
+}
+.video-thumb img {
+    width: 160px;
+}
+.video-thumb-title {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.video-player {
+    width: 100%;
+}

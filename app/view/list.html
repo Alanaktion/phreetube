@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include href="blocks/head.html" />
+</head>
+<body>
+    <include href="blocks/nav.html" />
+    <div class="container">
+        <check if="{{ @@title }}">
+            {{ @title | esc }}
+        </check>
+        <div class="clearfix">
+            <repeat group="{{ @list }}" value="{{ @item }}">
+                <include href="blocks/video-thumb.html" />
+            </repeat>
+        </div>
+    </div>
+</body>
+</html>

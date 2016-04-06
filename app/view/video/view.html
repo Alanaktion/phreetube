@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include href="blocks/head.html" />
+</head>
+<body>
+    <include href="blocks/nav.html" />
+    <div class="container">
+        <video class="video-player" controls autoplay preload="auto" poster="{{ @BASE }}/src/thm/{{ @video.slug }}.jpg">
+            <source src="{{ @BASE }}/src/vid/{{ @video.filename }}" type="{{ @video.mime_type }}">
+        </video>
+        <br>
+        <h1>{{ @video.title | esc }}</h1>
+        <small>
+            {{ number_format(@video.views) }} views
+            &middot;
+            Uploaded {{ @video->ago() }}
+        </small>
+        <p>{{ @video.description | esc }}</p>
+    </div>
+</body>
+</html>

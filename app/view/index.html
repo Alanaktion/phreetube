@@ -6,7 +6,20 @@
 <body>
     <include href="blocks/nav.html" />
     <div class="container">
-        <p>{{ \Helper\Video::instance()->uniqueKey() }}</p>
+        Latest Videos
+        <div class="clearfix">
+            <repeat group="{{ @new }}" value="{{ @item }}">
+                <include href="blocks/video-thumb.html" />
+            </repeat>
+        </div>
+        <br>
+
+        Most Played
+        <div class="clearfix">
+            <repeat group="{{ @top }}" value="{{ @item }}">
+                <include href="blocks/video-thumb.html" />
+            </repeat>
+        </div>
     </div>
 </body>
 </html>
