@@ -22,7 +22,7 @@ class Video extends \Prefab
     function getDuration($file) {
         $file = 'src/vid/' . $file;
         $result = shell_exec("avprobe " . escapeshellarg($file) . " 2>&1 | grep 'Duration' | awk '{print $2}' | sed s/,//");
-        $parts = explode(':', trim($parts));
+        $parts = explode(':', trim($result));
         $time = ($parts[0] * 3600) + ($parts[1] * 60) + $parts[2];
         return $time;
     }
