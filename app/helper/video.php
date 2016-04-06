@@ -35,16 +35,21 @@ class Video extends \Prefab
      * @return  string           Thumbnail filename
      */
     function generateThumbnail($file, $slug, $position = 0.3) {
-        $time = ceil($this->getDuration($file) * $position);
+        $time = floor($this->getDuration($file) * $position);
         $file = 'src/vid/' . $file;
 
         // Generate poster
         $thm = 'src/thm/' . $slug . '.jpg';
         shell_exec("avconv -ss " . escapeshellarg($time) . " -i " . escapeshellarg($file) . " -vsync 1 -r 1 -an -vframes 1 " . escapeshellarg($thm));
 
-        // Generate thumbnail
+        // Generate thumbnail with scale and crop
         $thm = 'src/thm/' . $slug . '_t.jpg';
         shell_exec("avconv -ss " . escapeshellarg($time) . " -i " . escapeshellarg($file) . " -vsync 1 -r 1 -an -vframes 1 -filter 'scale=384:-1,crop=384:216' " . escapeshellarg($thm));
+
+        // Generate thumbnail without crop if first run failed
+        if(!is_file($thm)) {
+            shell_exec("avconv -ss " . escapeshellarg($time) . " -i " . escapeshellarg($file) . " -vsync 1 -r 1 -an -vframes 1 -filter 'scale=384:216' " . escapeshellarg($thm));
+        }
 
         return $slug . '.jpg';
     }
