@@ -35,9 +35,9 @@ class Video extends \Prefab
      * @return  string           Thumbnail filename
      */
     function generateThumbnail($file, $slug, $position = 0.3) {
-        $file = realpath('src/vid/' . $file);
         $time = ceil($this->getDuration($file) * $position);
-        $thm = realpath('../thm/' . $slug . '.jpg');
+        $file = realpath('src/vid/' . $file);
+        $thm = realpath('src/thm/' . $slug . '.jpg');
         $result = shell_exec("avconv -ss " . escapeshellarg($time) . " -i " . escapeshellarg($file) . " -vsync 1 -r 1 -an -vframes 1 " . escapeshellarg($thm));
         return $slug . '.jpg';
     }
