@@ -37,11 +37,11 @@ class Index extends \Controller
     }
 
     /**
-     * GET /new
+     * GET /latest
      * @param  \Base $fw
      * @param  array $params
      */
-    function new(\Base $fw, array $params)
+    function latest(\Base $fw, array $params)
     {
         $video = new \Model\Video;
 
@@ -53,7 +53,7 @@ class Index extends \Controller
     }
 
     /**
-     * GET /search
+     * GET /searchk
      * @param  \Base $fw
      */
     function search(\Base $fw)
