@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <include href="blocks/head.html" />
+</head>
+<body>
+    <include href="blocks/nav.html" />
+    <div class="container">
+        <h2>{{ @user.name }} <small>{{ @user.username }}</small></h2>
+        <div class="clearfix">
+            <repeat group="{{ @videos }}" value="{{ @item }}">
+                <include href="blocks/video-thumb.html" />
+            </repeat>
+        </div>
+    </div>
+</body>
+</html>

@@ -38,4 +38,26 @@ class User extends \Controller
         $this->render('user/login.html');
     }
 
+    /**
+     * GET /u/@username
+     * @param  \Base $fw
+     * @param  array $params
+     */
+    function view(\Base $fw, array $params)
+    {
+        $user = new \Model\User;
+        $user->load(['username = ?', $params['username']]);
+        if(!$user->id) {
+            $fw->error(404);
+        }
+        $fw->set('user', $user);
+
+        $video = new \Model\Video;
+        $videos = $video->find(['user_id = ?', $user->id]);
+        $fw->set('videos', $videos);
+
+        $this->render('user/view.html');
+    }
+
+
 }

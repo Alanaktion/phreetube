@@ -1,4 +1,5 @@
 .video-list-row {
+    white-space: nowrap;
     overflow-x: auto;
 }
 

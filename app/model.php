@@ -56,22 +56,6 @@ abstract class Model extends \DB\SQL\Mapper
     }
 
     /**
-     * Load by ID directly if a number is passed
-     * @param  string|array  $filter
-     * @param  array         $options
-     * @param  integer       $ttl
-     * @return mixed
-     */
-    function load($filter=NULL, array $options=NULL, $ttl=0)
-    {
-        if (is_numeric($filter)) {
-            return parent::load(array("id = ?", $filter), $options, $ttl);
-        } else {
-            return parent::load($filter, $options, $ttl);
-        }
-    }
-
-    /**
      * Get or set the model data
      * @param  array|null $data
      * @return Model|array
