@@ -7,7 +7,7 @@
     <include href="blocks/nav.html" />
     <div class="container">
         Latest Videos
-        <div class="clearfix">
+        <div class="video-list-row clearfix">
             <repeat group="{{ @new }}" value="{{ @item }}">
                 <include href="blocks/video-thumb.html" />
             </repeat>
@@ -15,7 +15,7 @@
         <br>
 
         Most Played
-        <div class="clearfix">
+        <div class="video-list-row clearfix">
             <repeat group="{{ @top }}" value="{{ @item }}">
                 <include href="blocks/video-thumb.html" />
             </repeat>

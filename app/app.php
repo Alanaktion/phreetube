@@ -41,6 +41,15 @@ final class App
             self::$_config['db']['password']
         );
 
+        // Check for login
+        if($user_id = self::$_router->get('SESSION.user_id')) {
+            $user = new \Model\User;
+            $user->load(['id = ?', $user_id]);
+            if($user->id) {
+                self::$_router->set('_user', $user);
+            }
+        }
+
         // Initialize routes
         require_once 'routes.php';
     }

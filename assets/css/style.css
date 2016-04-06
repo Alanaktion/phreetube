@@ -1,3 +1,7 @@
+.video-list-row {
+    overflow-x: auto;
+}
+
 .video-thumb {
     float: left;
     width: 160px;
