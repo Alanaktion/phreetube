@@ -29,4 +29,9 @@ class Video extends \Model
         return "$difference $periods[$j] $tense";
     }
 
+    function generateThumbnail() {
+        $helper = \Helper\Video::instance();
+        $helper->generateThumbnail($this->filename, $this->slug);
+    }
+
 }

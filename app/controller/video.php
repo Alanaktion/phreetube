@@ -17,6 +17,11 @@ class Video extends \Controller
         if(!$video->id) {
             $fw->error(404);
         }
+
+        // Generate thumbnail if it's missing
+        if(!is_file('src/thm/' . $video->slug . '.jpg')) {
+            $video->generateThumbnail();
+        }
         
         $video->views ++;
         $video->save();
