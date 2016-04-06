@@ -2,8 +2,8 @@
 	<a href="{{ @BASE }}/v/{{ @item.slug }}">
 		<img class="img-responsive" src="{{ @BASE }}/src/thm/{{ @item.slug }}_t.jpg" alt>
 	</a>
-	<a href="{{ @BASE }}/v/{{ @item.slug }}" class="video-thumb-title">
-		<strong>{{ @item.title | esc }}</strong>
+	<a href="{{ @BASE }}/v/{{ @item.slug }}" class="video-thumb-title" title="{{ @item.title | esc }}">
+		{{ @item.title | esc }}
 	</a>
 	{{ number_format(@item.views) }} views
 	&middot;
