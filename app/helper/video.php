@@ -28,7 +28,7 @@ class Video extends \Prefab
     }
 
     /**
-     * Generate a thumbnail for a file
+     * Generate a scaled and cropped 16:9 thumbnail for a video file
      * @param   string $file
      * @param   string $slub
      * @param   float $position  Position in the video as decimal percent
@@ -38,7 +38,7 @@ class Video extends \Prefab
         $time = ceil($this->getDuration($file) * $position);
         $file = 'src/vid/' . $file;
         $thm = 'src/thm/' . $slug . '.jpg';
-        $result = shell_exec("avconv -ss " . escapeshellarg($time) . " -i " . escapeshellarg($file) . " -vsync 1 -r 1 -an -vframes 1 " . escapeshellarg($thm));
+        $result = shell_exec("avconv -ss " . escapeshellarg($time) . " -i " . escapeshellarg($file) . " -vsync 1 -r 1 -an -vframes 1  -filter 'scale=384:-1,crop=384:216' " . escapeshellarg($thm));
         return $slug . '.jpg';
     }
 
