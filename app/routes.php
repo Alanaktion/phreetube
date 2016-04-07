@@ -13,4 +13,6 @@ $router->route('GET /v/@slug', 'Controller\\Video->view');
 // User
 $router->route('GET /login', 'Controller\\User->login');
 $router->route('POST /login', 'Controller\\User->loginPost');
+$router->route('GET /signup', 'Controller\\User->signup');
+$router->route('POST /signup', 'Controller\\User->signupPost');
 $router->route('GET /u/@username', 'Controller\\User->view');

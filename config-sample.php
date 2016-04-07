@@ -7,4 +7,8 @@ return [
         "password" => "",
         "database" => "phreetube",
     ],
+    "recaptcha" => [
+        "site_key" => "",
+        "secret_key" => "",
+    ]
 ];

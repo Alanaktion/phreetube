@@ -1,0 +1,12 @@
+root = true
+
+[*]
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+
+[*.{php,html}]
+indent_style = space
+
+[lib/**.php]
+indent_style = tab

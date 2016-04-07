@@ -60,4 +60,25 @@ class User extends \Controller
     }
 
 
+    /**
+     * GET /signup
+     * @param  \Base $fw
+     */
+    function signup(\Base $fw)
+    {
+        if($fw->get('_user')) {
+            $fw->reroute('/dashboard');
+        }
+        $this->render('user/signup.html');
+    }
+
+    /**
+     * POST /signup
+     * @param  \Base $fw
+     */
+    function signupPost(\Base $fw)
+    {
+
+    }
+
 }
